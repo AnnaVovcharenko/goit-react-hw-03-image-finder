@@ -1,5 +1,6 @@
 import { Bars } from  'react-loader-spinner'
 import { LodeWrapper } from './Loader.styled';
+
 export const Loader = () => {
   
 return(

@@ -17,7 +17,7 @@ export class ImgGalleryItem extends Component {
   };
 
   render() {
-    const { isModalOpen, showImg } = this.state; //Отримуємо поточне значення isModalOpen зі стану
+    const { isModalOpen } = this.state; //Отримуємо поточне значення isModalOpen зі стану
     const { image } = this.props; // Отримуємо переданий пропс
 
     return (

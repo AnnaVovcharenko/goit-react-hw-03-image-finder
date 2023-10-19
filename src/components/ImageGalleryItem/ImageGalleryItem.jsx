@@ -42,6 +42,4 @@ export class ImgGalleryItem extends Component {
   }
 }
 
-//largeImageURL - посилання на велике зображення для модального вікна
-//webformatURL - посилання на маленьке зображення для списку карток
-// id - унікальний ідентифікатор
+

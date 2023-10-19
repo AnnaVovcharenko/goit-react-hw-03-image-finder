@@ -6,12 +6,7 @@ import * as API from './Api';
 
 import { Component } from 'react';
 import {Loader} from './Loader/Loader';
-// import { Notify } from 'notiflix';
-// Notify.init({
-//   width: '300px',
-//   position: 'left-top',
-//   timeout: 2000,
-// });
+
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -66,9 +61,7 @@ export class App extends Component {
     }
   };
 
-  // smoothScroll = (cardHeight) => {
-  //   scroll.scrollMore(cardHeight * 2);
-  // };
+ 
 
   //Оброблення та відправлення форми
   handledSubmit = value => {

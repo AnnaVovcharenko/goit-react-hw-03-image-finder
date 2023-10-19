@@ -4,12 +4,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 const BASE_URL = 'https://pixabay.com/api/';
 const limitPage = 12;
 const API_KEY = '39130708-8822508b9719607ff3135caf6';
-// export const fetchImg = async (query, page) => {
-//   const response = await axios.get(
-//     `?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=${limitPage}`
-//   );
-//   return response.data;
-// };
+
 
 export const fetchImg = async (queryFetch, pageFetch) => {
   const response = {

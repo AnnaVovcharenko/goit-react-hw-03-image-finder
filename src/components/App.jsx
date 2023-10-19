@@ -2,7 +2,7 @@
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { SearchBar } from './Searchbar/Searchbar';
 import { Button } from './Button/Button';
-import * as API from './Api';
+import * as API from '../api/Api';
 
 import { Component } from 'react';
 import {Loader} from './Loader/Loader';

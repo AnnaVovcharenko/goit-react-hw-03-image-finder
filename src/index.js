@@ -4,7 +4,7 @@ import { App } from 'components/App';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <React.StrictMode  basename="/goit-react-hw-03-image-finder">
     <App />
   </React.StrictMode>
 );

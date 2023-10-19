@@ -1,4 +1,3 @@
-
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { SearchBar } from './Searchbar/Searchbar';
 import { Button } from './Button/Button';

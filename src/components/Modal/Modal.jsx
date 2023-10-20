@@ -1,48 +1,40 @@
-import React, { Component } from 'react';
-import { createPortal } from 'react-dom';
-import { Overlay, Modal  } from './Modal.styled';
-const modalRoot = document.querySelector('#root');
+import Modal from 'react-modal';
+import React from 'react';
 
 
-export class ModalWindow extends Component {
-  //Метод життєвого циклу: викликається після монтування компонента
-
-  componentDidMount() {
-    window.addEventListener('keydown', this.keyDown); //Додаємо обробник події натискання клавіші
-    document.body.style.overflow = 'hidden';
-  }
-
-  //Метод життєвого циклу: викликається перед розмонтуванням компонента
-  componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyDown); // Видаляємо обробник події натискання клавіші
-    document.body.style.overflow = 'visible';
-  }
-
-  // Обробник події натискання клавіші
-  keyDown = event => {
-    if (event.code === 'Escape') {
-      this.props.onClose(); // Закриваємо модальне вікно при натисканні клавіші Escape
-    }
-  };
-
-  // Обробник кліка на тлі модального вікна
-  backdropClick = event => {
-    if (event.currentTarget === event.target) {
-      this.props.onClose(); // Закриваємо модальне вікно при натисканні на тлі
-    }
-  };
-
-  render() {
-    const { largeImageURL, tags } = this.props; //Отримуємо значення пропсів
-
-    return createPortal(
-      <Overlay onClick={this.backdropClick}>
-        <Modal><img src={largeImageURL} alt={tags} /></Modal>
-        
-      </Overlay>,
-      modalRoot
-    );
-  }
-}
+Modal.setAppElement('#root');
+const customStyles = {
+  content: {
+    top: '52%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: '0',
+    border: 'none',
+    maxWidth: 'calc (100vw - 48px)',
+    maxHeight: 'calc(100vh - 24px)',
+    overflow: 'none',
+  },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+  },
+};
 
 
+export const ModalWindow = props => {
+  const { isOpen, onRequestClose, largeImageURL, tags } = props;
+  return (
+    <div>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={onRequestClose}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <img src={largeImageURL} alt={tags} />
+      </Modal>
+    </div>
+  );
+};

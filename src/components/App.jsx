@@ -13,12 +13,12 @@ export class App extends Component {
  // всі коменти які я роблю, були взяті з документації React та конспекту 
 //ЗМІНА НАЗВ ВЛАСТИВОСТЕЙ КОМПОНЕНТІВ(збереження даних компонентів)
 state = {
-  query: "", // searchValue: ''
+  query: "", 
   images: [],
   error: false,
-  loading: false, // isLoading
+  loading: false, 
   page: 1,
-  totalImges: 0 //totalPage:
+  totalImges: 0 
 }
 
   
